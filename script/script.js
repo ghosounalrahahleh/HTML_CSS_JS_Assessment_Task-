@@ -47,15 +47,18 @@ var validAllergies=false;
   if (customerName.value.length < 5 || customerName.value.length > 16) {
     nameError.innerHTML =
       "Your name must be at least five characters long and at most 16";
-    nameError.style.color = "red";
+     nameError.style.color = "red";
+     customerName.style.boxShadow="0px 0px 3px red"
     customerName.addEventListener("keypress", () => {
       if (customerName.value.length > 16) {
         nameError.innerHTML = "Your name must be  at most 16 characters";
         nameError.style.color = "red";
+        customerName.style.boxShadow="0px 0px 3px red"
       } else {
         if (customerName.value.length < 16) {
           nameError.innerHTML = "Okay!";
-          nameError.style.color = "green";
+          nameError.style.color = "#3deb34";
+          customerName.style.boxShadow="0px 0px 5px #3deb34"
         }
       }
      
@@ -68,9 +71,11 @@ var validAllergies=false;
   if (count.value == 0) {
     countError.innerHTML = "You have to choose at least 1 and at most 15";
     countError.style.color = "red";
+    count.style.boxShadow="0px 0px 3px red"
     count.addEventListener("change", () => {
       countError.innerHTML = "Okay!";
-      countError.style.color = "green";
+      countError.style.color = "#3deb34";
+      count.style.boxShadow="0px 0px 5px #3deb34"
     });
   } else validCount =true;
 
@@ -80,9 +85,11 @@ var validAllergies=false;
   if (type.value === "None") {
     typeError.innerHTML = "You have to choose cupcake type";
     typeError.style.color = "red";
+    type.style.boxShadow="0px 0px 5px red"
     type.addEventListener("change", () => {
       typeError.innerHTML = "Okay!";
-      typeError.style.color = "green";
+      typeError.style.color = "#3deb34";
+      type.style.boxShadow="0px 0px 5px #3deb34"
     });
   }else validType =true;
 
@@ -91,10 +98,11 @@ var validAllergies=false;
   if (deliveryTime.value === "") {
     deliveryError.innerHTML = "You have to determine delivery Time";
     deliveryError.style.color = "red";
+    deliveryTime.style.boxShadow="0px 0px 5px red"
     deliveryTime.addEventListener("change", () => {
-      console.log(deliveryTime.value);
       deliveryError.innerHTML = "Okay!";
-      deliveryError.style.color = "green";
+      deliveryError.style.color = "#3deb34";
+      deliveryTime.style.boxShadow="0px 0px 5px #3deb34"
     });
   }else validTime =true;
   //   allergies validation
@@ -102,12 +110,15 @@ var validAllergies=false;
   if (type.value === "chocolate" && allergies.value === "dairyFree") {
     allergiesError.innerHTML = " chocolate cake is not dairy free option";
     allergiesError.style.color = "red";
+    allergies.style.boxShadow="0px 0px 5px red"
   } else if (type.value === "chocolate" && deliveryTime.value === "4:00 PM") {
     deliveryError.innerHTML = " chocolate cake cannot be delivered at 4 PM";
     deliveryError.style.color = "red";
+    deliveryTime.style.boxShadow="0px 0px 5px red"
   }else  {
-    allergiesError.innerHTML = "Okay";
-    allergiesError.style.color = "green"; 
+    allergiesError.innerHTML = "Okay !";
+    allergiesError.style.color = "#3deb34"; 
+   
    validAllergies=true;}
  
 
