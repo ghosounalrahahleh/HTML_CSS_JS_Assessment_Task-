@@ -106,7 +106,6 @@ var validAllergies=false;
     });
   }else validTime =true;
   //   allergies validation
-
   if (type.value === "chocolate" && allergies.value === "dairyFree") {
     allergiesError.innerHTML = " chocolate cake is not dairy free option";
     allergiesError.style.color = "red";
@@ -121,7 +120,7 @@ var validAllergies=false;
    
    validAllergies=true;}
  
-
+// prevent defult
 
   if (validName === false || validCount===false || validType===false || validTime===false || validAllergies===false) {
     e.preventDefault();
