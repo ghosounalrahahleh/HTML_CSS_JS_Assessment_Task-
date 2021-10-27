@@ -73,13 +73,18 @@ var validAllergies=false;
     countError.style.color = "red";
     count.style.boxShadow="0px 0px 3px red"
     count.addEventListener("change", () => {
-      countError.innerHTML = "Okay!";
-      countError.style.color = "#3deb34";
-      count.style.boxShadow="0px 0px 5px #3deb34"
-    });
-  } else validCount =true;
+      if(count.value < 0){
+        countError.innerHTML = "it can't be a negative number";
+        countError.style.color = "red";
+        count.style.boxShadow="0px 0px 3px red";}
+        else{
+        countError.innerHTML = "Okay!";
+        countError.style.color = "#3deb34";
+        count.style.boxShadow="0px 0px 5px #3deb34";}
+        });
+     
 
-
+   } else  validCount =true;
   //   type validation
 
   if (type.value === "None") {
@@ -93,6 +98,8 @@ var validAllergies=false;
     });
   }else validType =true;
 
+  
+ 
   //  delivery Time validation
 
   if (deliveryTime.value === "") {
